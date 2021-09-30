@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { StyleSheet, ScrollView, View } from 'react'
+import Login from '..//Login'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <ScrollView
+        contentInsetAdjustmentBehavior='automatic'
+        style={styles.scrollView}
+      >
+        <View style={styles.body}>
+          <Login />
+        </View>
+      </ScrollView>
+    </>
+  )
 }
 
-export default App;
+const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: 'white',
+  },
+  body: {
+    margin: 20,
+  },
+})
+
+export default App
